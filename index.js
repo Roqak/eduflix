@@ -8,6 +8,12 @@ const { ExpressOIDC } = require('@okta/oidc-middleware');
 const bodyParser = require('body-parser');
 const course = require('./routes/courses');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 mongoose.connect("mongodb://akin:akinkunmi1@ds243084.mlab.com:43084/eduflix")
 .then(
   (result)=>{
@@ -51,7 +57,9 @@ app.use('/course',course);
 //     res.send("hello world")
 //   });
 
-
+app.post('/ttest',(req,res)=>{
+  res.json({'k':"working"}).status(200);
+})
 
 
 
@@ -61,7 +69,7 @@ app.use('/course',course);
 //     console.log("Listening on port 9000");
 // })
 // oidc.on('ready', () => {
-    app.listen(9000, () => console.log(`Started!`));
+    app.listen(4000, () => console.log(`Started!`));
   // });
   
   // oidc.on('error', err => {

@@ -6,13 +6,17 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 // import router from './router'
 import VueRouter from 'vue-router'
 import SignUp from './components/SignUp.vue'
+import HelloWorld from './components/HelloWorld'
+import SignIn from './components/SignIn'
+
 
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 const routes = [
-  // { path: '/', component: Foo },
-  { path: '/bar', component: SignUp }
+  { path: '/', component: HelloWorld },
+  { path: '/signup', component: SignUp },
+  { path: '/signin', component: SignIn }
 ]
 const router = new VueRouter({
   routes // short for `routes: routes`

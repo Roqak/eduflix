@@ -2,32 +2,21 @@
   <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <!-- <span>Vuetify</span> -->
-        <span class="font-weight-light">EDUFLIX</span>
+        <span class="font-weight-light"><router-link class="nav-link" to="/">EDUFLIX</router-link></span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <!-- <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn> -->
       <v-btn
         flat
-      >
-        <!-- <span class="mr-2">Sign Up</span> -->
-            <router-link to="/bar">Go to Bar</router-link>
+         >
+        <router-link class="nav-link" to="/signin">Sign In</router-link>
       </v-btn>
-            <router-link to="/bar">Go to Bar</router-link>
-
       <v-btn
         flat
-        href="#"
-        target="_blank"
-      >
-        <span class="mr-2">Sign In</span>
+         >
+        <router-link class="nav-link" to="/signup">Sign Up</router-link>
       </v-btn>
     </v-toolbar>
+    
 </template>
 
 <script>

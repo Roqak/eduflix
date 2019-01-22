@@ -11,6 +11,7 @@
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
+      <router-view>
         <span class="mr-2">Latest Release</span>
       </v-btn>
     </v-toolbar> -->
@@ -18,8 +19,12 @@
 
     <v-content>
       <!-- <SignUp/> -->
+      <router-view>
       <HelloWorld/>
+      <Serv/>
+      </router-view>
     </v-content>
+    <Footer/>
   </v-app>
 </template>
 
@@ -27,6 +32,10 @@
 import HelloWorld from './components/HelloWorld';
 import SignUp from './components/SignUp';
 import Header from './components/Header';
+import Serv from './components/Serv';
+import Footer from './components/Footer'
+import SignIn from './components/SignIn'
+
 // import Sam from './components/Sam';
 
 export default {
@@ -35,7 +44,10 @@ export default {
   components: {
     HelloWorld,
     SignUp,
-    Header
+    Header,
+    Serv,
+    Footer,
+    SignIn
   },
   data () {
     return {
