@@ -56,6 +56,7 @@
         .then(function (response) {
             console.log(response.data.token);
             this.token = response.data.token;
+            // console.log(this.token)
         })
         .catch(function (error) {
             console.log(error.response);
