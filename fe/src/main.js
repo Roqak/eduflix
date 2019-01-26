@@ -8,11 +8,14 @@ import VueRouter from 'vue-router'
 import SignUp from './components/SignUp.vue'
 import HelloWorld from './components/HelloWorld'
 import SignIn from './components/SignIn'
+import {store} from './store.js'
+
 
 
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+
 const routes = [
   { path: '/', component: HelloWorld },
   { path: '/signup', component: SignUp },
@@ -23,5 +26,6 @@ const router = new VueRouter({
 })
 new Vue({
   render: h => h(App),
+  store: store,
   router
 }).$mount('#app')
