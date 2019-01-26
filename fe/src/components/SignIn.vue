@@ -11,7 +11,7 @@
         <v-container style="position: relative;top: 13%;" class="text-xs-center">
           <v-card flat>
             <v-card-title primary-title>
-              <h4>{{name}}</h4>
+              <h4>{{name}} {{counted}}</h4>
             </v-card-title>
             <v-form>
             <v-text-field prepend-icon="person" name="Email" label="Email"></v-text-field>
@@ -34,14 +34,18 @@
   export default {
     data: () => ({
       valid: true,
-      name: 'SignIn',
-      token: ''
+      name: 'SignIn'
       
     }),
 
         mounted() {
           //  alert("mounted")
         },
+        computed: {
+    counted () {
+	    return this.$store.state.token
+    }
+  },
     methods: {
      
       clear () {
@@ -56,6 +60,7 @@
         .then(function (response) {
             console.log(response.data.token);
             this.token = response.data.token;
+            this.$store.commit('logIn',response.data.token)
             // console.log(this.token)
         })
         .catch(function (error) {
